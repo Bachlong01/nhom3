@@ -1,0 +1,111 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Trang Cá Nhân</title>
+    <link rel="stylesheet" href="/js/site.js">
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+
+<body>
+    <ul class="menu">
+        <li><button><a href="~/Home/TrangChu">Trang chủ</a></button></li>
+        <li id="profileLink"><button><a href="~/Home/TrangCaNhan">Profile</a></button></li>
+        <li id="addKoiLink"><button><a href="~/Home/ThemCaKoi">Thêm Cá Koi</a></button></li>
+        <li id="infoLink"><button><a href="~/Home/TTChiTietCuocThi">Thông tin</a></button></li>
+        <li id="loginLink"><button><a href="~/Home/DangNhap">Đăng Nhập</a></button></li>
+        <li id="registerLink"><button><a href="~/Home/DangKy">Đăng Ký</a></button></li>
+        <li id="logoutLink"><button><a href="~/Home/DangXuat">Đăng Xuất</a></button></li>
+    </ul>
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900" style="text-align: center;">Trang cá Nhân</h2>
+    <div id="userProfile"></div>
+    
+    <script>
+        function getLoggedInUser() {
+            // Lấy thông tin người dùng từ localStorage
+            return JSON.parse(localStorage.getItem('loggedInUser'));
+        } 
+        function updateLoggedInUser(user) {
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
+
+            // Cập nhật danh sách người dùng
+            const users = getUsers();
+            const userIndex = users.findIndex(u => u.username === user.username);
+            if (userIndex !== -1) {
+                users[userIndex] = user;
+                saveUsers(users);
+            }
+        }
+
+        function updateNav() {
+            const user = getLoggedInUser();
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const profileLink = document.getElementById('profileLink');
+            const addKoiLink = document.getElementById('addKoiLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (user) {
+                // Nếu đã đăng nhập, ẩn liên kết đăng nhập và đăng ký
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+            } else {
+                // Nếu chưa đăng nhập, ẩn các liên kết khác
+                profileLink.style.display = 'none';
+                addKoiLink.style.display = 'none';
+                logoutLink.style.display = 'none';
+            }
+        }
+
+        function displayUserProfile() {
+            const user = getLoggedInUser();
+            const profileDiv = document.getElementById('userProfile');
+
+            if (!user) {
+                profileDiv.innerHTML = '<p>Bạn chưa đăng nhập. Vui lòng <a href="#" data-section="login">đăng nhập</a> để xem hồ sơ.</p>';
+                return;
+            }
+
+            let html = `<h3>Người Dùng: ${user.username}</h3>`;
+
+            if (user.koiProfiles.length === 0) {
+                html += '<p>Bạn chưa thêm hồ sơ cá Koi nào. <a href="/home/ThemcaKoi" data-section="add">Thêm cá Koi ngay</a>.</p>';
+            } else {
+                html += '<h4>Hồ Sơ Cá Koi:</h4>';
+                user.koiProfiles.forEach((koi, index) => {
+                    html += `
+                        <div class="fish-item">
+                            <img src="${koi.image}" alt="${koi.name}">
+                            <div class="fish-details">
+                                <h3>${koi.name}</h3>
+                                <p>${koi.description}</p>
+                                <button onclick="deleteKoi(${index})">Xóa</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            profileDiv.innerHTML = html;
+        }
+        function deleteKoi(index) {
+            const user = getLoggedInUser();
+            if (!user) return;
+
+            if (confirm('Bạn có chắc chắn muốn xóa hồ sơ cá Koi này?')) {
+                user.koiProfiles.splice(index, 1);
+                updateLoggedInUser(user);
+                displayUserProfile();
+
+            }
+        }
+        // Khi trang được tải, cập nhật thanh điều hướng và hiển thị hồ sơ người dùng
+        window.onload = function() {
+            updateNav();
+            displayUserProfile();
+        };
+    </script>
+</body>
+</html>

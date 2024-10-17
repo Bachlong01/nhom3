@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+<html>
+    <head>
+        <meta name="viewport"content="width = device - width"/>
+        <title>Trang chủ</title>
+        <link rel="stylesheet" href="/css/site.css" />
+    </head>
+    <body>
+    <ul class="menu">
+        <li><button><a href="~/Home/TrangChu">Trang chủ</a></button></li>
+        <li id="profileLink"><button><a href="~/Home/TrangCaNhan">Profile</a></button></li>
+        <li id="addKoiLink"><button><a href="~/Home/ThemCaKoi">Thêm Cá Koi</a></button></li>
+        <li id="infoLink"><button><a href="~/Home/TTChiTietCuocThi">Thông tin</a></button></li>
+        <li id="loginLink"><button><a href="~/Home/DangNhap">Đăng Nhập</a></button></li>
+        <li id="registerLink"><button><a href="~/Home/DangKy">Đăng Ký</a></button></li>
+        <li id="logoutLink"><button><a href="~/Home/DangXuat">Đăng Xuất</a></button></li>
+    </ul>
+    <h2>Thông tin về cuộc thi<br /></h2>
+    <div>
+        <h3>Cuộc thi Triển lãm Cá Koi - Koi Show 2024</h3> <br />
+        <ul>
+            <li><h4>Mục tiêu: Triển lãm và thi đấu những chú cá Koi đẹp nhất đến từ nhiều nơi trên thế giới, nơi các nhà sưu tập và đam mê cá Koi có thể đăng ký, trưng bày và tranh tài.</h4><br /></li>
+
+        </ul>
+    </div>
+    <h2>Giải thưởng<br /></h2>
+    <div>
+        <h2>Luật thi đấu<br /></h2>
+        <h3>Các cá Koi được phân loại vào từng hạng mục thi đấu dựa trên:<br /></h3>
+        <ul>
+            <li>Giống (Variety): Các dòng cá Koi như Kohaku, Sanke, Showa, v.v.</li>
+            <li>Kích thước (Size): Được đo bằng chiều dài của cá.</li>
+            <li>Độ tuổi (Age): Phân loại theo độ tuổi của cá Koi (Baby, Young, Adult, Mature).</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Tiêu chí chẩm điểm<br /></h2>
+        <ul>
+            <li>Dáng (50%): Dáng bơi, hình dáng tổng thể của cá Koi.</li>
+            <li>Màu sắc (30%): Độ sắc nét, tươi sáng của màu sắc cá.</li>
+            <li>Hoa văn (20%): Cấu trúc và độ đẹp mắt của hoa văn trên cá.</li>
+        </ul>
+    </div>
+    <h2>Tin tức<br /></h2>
+    <button onclick="clearAllData()">Xóa Tất Cả Dữ Liệu</button>
+    <script>
+        function getLoggedInUser() {
+            return JSON.parse(localStorage.getItem('loggedInUser'));
+        }
+
+        function updateNav() {
+            const user = getLoggedInUser();
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const profileLink = document.getElementById('profileLink');
+            const addKoiLink = document.getElementById('addKoiLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (user) {
+                // Nếu đã đăng nhập, ẩn liên kết đăng nhập và đăng ký
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+            } else {
+                // Nếu chưa đăng nhập, ẩn các liên kết khác
+                profileLink.style.display = 'none';
+                addKoiLink.style.display = 'none';
+                logoutLink.style.display = 'none';
+            }
+        }
+
+        function clearAllData() {
+            if (confirm('Bạn có chắc chắn muốn xóa tất cả dữ liệu không?')) {
+                localStorage.clear(); // Xóa tất cả dữ liệu trong localStorage
+                alert('Tất cả dữ liệu đã được xóa!');
+
+                // Cập nhật lại giao diện người dùng
+                updateNav();
+                displayUserProfile();
+            }
+        }
+        window.onload = function () {
+            updateNav();
+        }
+    </script>
+</body>
+</html>
+

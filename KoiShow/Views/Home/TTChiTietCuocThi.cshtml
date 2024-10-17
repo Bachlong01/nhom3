@@ -1,0 +1,192 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thông tin chi tiết cuộc thi</title>
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <ul class="menu">
+        <li><button><a href="~/Home/TrangChu">Trang chủ</a></button></li>
+        <li id="profileLink"><button><a href="~/Home/TrangCaNhan">Profile</a></button></li>
+        <li id="addKoiLink"><button><a href="~/Home/ThemCaKoi">Thêm Cá Koi</a></button></li>
+        <li id="infoLink"><button><a href="~/Home/TTChiTietCuocThi">Thông tin</a></button></li>
+        <li id="loginLink"><button><a href="~/Home/DangNhap">Đăng Nhập</a></button></li>
+        <li id="registerLink"><button><a href="~/Home/DangKy">Đăng Ký</a></button></li>
+        <li id="logoutLink"><button><a href="~/Home/DangXuat">Đăng Xuất</a></button></li>
+    </ul>
+    <section id="home" class="welcome-hero">
+        <div class="container">
+            <div class="welcome-hero-txt">
+                <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">HIỂN THỊ VÀ TÌM KIẾM</h2>
+                <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Tìm kiếm thông tin chi tiết các cuộc thi (đang diễn ra, sắp diễn ra, đã diễn ra)</h2>
+            </div>
+            <div class="welcome-hero-serch-box">
+                <div class="welcome-hero-form">
+                    <div class="single-welcome-hero-form">
+                        <h3 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Thời gian cuộc thi muốn tìm</h3>
+                        <form action="">
+                            <input type="text" id="searchCompetition" placeholder="Ex: 2023, 2024, 2025,..." oninput="searchCompetitions()" />
+                            <div id="competition-list" class="competition-list"></div>
+                            <h3 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                                <p>&copy; 2024 Koi Competition. All rights reserved.</p>
+                            </h3>
+                        </form>
+                        <div class="welcome-hero-form-icon">
+                            <i class="flaticon-list-with-dots"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const sampleCompetitions = [
+            {
+                title: "Cuộc Thi Cá Koi Hè 2024",
+                description: "Cuộc thi cá Koi diễn ra vào tháng 7 năm 2024.",
+                date: "2024-07-15",
+                status: "sắp diễn ra"
+            },
+            {
+                title: "Cuộc Thi Cá Koi Xuân 2024",
+                description: "Cuộc thi cá Koi diễn ra vào tháng 4 năm 2024.",
+                date: "2024-04-10",
+                status: "đã diễn ra"
+            },
+            {
+                title: "Cuộc Thi Cá Koi Thu 2024",
+                description: "Cuộc thi cá Koi diễn ra vào tháng 10 năm 2024.",
+                date: "2024-10-20",
+                status: "đang diễn ra"
+            }
+        ];
+
+        function getCompetitions() {
+            const competitions = localStorage.getItem('competitions');
+            if (competitions) {
+                return JSON.parse(competitions);
+            } else {
+                localStorage.setItem('competitions', JSON.stringify(sampleCompetitions));
+                return sampleCompetitions;
+            }
+        }
+
+        function saveCompetitions(competitions) {
+            localStorage.setItem('competitions', JSON.stringify(competitions));
+        }
+
+        function displayCompetitions() {
+            const competitions = getCompetitions();
+            const competitionList = document.getElementById('competition-list');
+            competitionList.innerHTML = '';
+
+            if (competitions.length === 0) {
+                competitionList.innerHTML = '<p>Chưa có cuộc thi nào được thêm.</p>';
+                return;
+            }
+
+            competitions.forEach((competition) => {
+                const competitionItem = document.createElement('div');
+                competitionItem.className = 'competition-item';
+
+                const details = document.createElement('div');
+                details.className = 'competition-details';
+
+                const title = document.createElement('h3');
+                title.textContent = competition.title;
+
+                const description = document.createElement('p');
+                description.textContent = competition.description;
+
+                const date = document.createElement('p');
+                date.textContent = `Ngày diễn ra: ${competition.date}`;
+
+                const status = document.createElement('p');
+                status.textContent = `Trạng thái: ${competition.status}`;
+
+                details.appendChild(title);
+                details.appendChild(description);
+                details.appendChild(date);
+                details.appendChild(status);
+
+                competitionItem.appendChild(details);
+                competitionList.appendChild(competitionItem);
+            });
+        }
+
+        function searchCompetitions() {
+            const query = document.getElementById('searchCompetition').value.toLowerCase();
+            const competitions = getCompetitions();
+            const filtered = competitions.filter(comp => comp.title.toLowerCase().includes(query) || comp.description.toLowerCase().includes(query));
+
+            const competitionList = document.getElementById('competition-list');
+            competitionList.innerHTML = '';
+
+            if (filtered.length === 0) {
+                competitionList.innerHTML = '<p>Không tìm thấy cuộc thi nào phù hợp.</p>';
+                return;
+            }
+
+            filtered.forEach((competition) => {
+                const competitionItem = document.createElement('div');
+                competitionItem.className = 'competition-item';
+
+                const details = document.createElement('div');
+                details.className = 'competition-details';
+
+                const title = document.createElement('h3');
+                title.textContent = competition.title;
+
+                const description = document.createElement('p');
+                description.textContent = competition.description;
+
+                const date = document.createElement('p');
+                date.textContent = `Ngày diễn ra: ${competition.date}`;
+
+                const status = document.createElement('p');
+                status.textContent = `Trạng thái: ${competition.status}`;
+
+                details.appendChild(title);
+                details.appendChild(description);
+                details.appendChild(date);
+                details.appendChild(status);
+
+                competitionItem.appendChild(details);
+                competitionList.appendChild(competitionItem);
+            });
+        }
+
+        function getLoggedInUser() {
+            return JSON.parse(localStorage.getItem('loggedInUser'));
+        }
+
+        function updateNav() {
+            const user = getLoggedInUser();
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const profileLink = document.getElementById('profileLink');
+            const addKoiLink = document.getElementById('addKoiLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (user) {
+                // Nếu đã đăng nhập, ẩn liên kết đăng nhập và đăng ký
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+            } else {
+                // Nếu chưa đăng nhập, ẩn các liên kết khác
+                profileLink.style.display = 'none';
+                addKoiLink.style.display = 'none';
+                logoutLink.style.display = 'none';
+            }
+        }
+
+        window.onload = function () {
+            updateNav();
+            displayCompetitions(); // Hiển thị danh sách cuộc thi khi tải trang
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿input[type="text"],
+input[type="password"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: darkgray;
+}
+
+.menu li {
+    text-align: center;
+    display: inline-block;
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+}
+.menu button:hover {
+        background-color: lightblue;
+}
+.menu a {
+        text-decoration: none;
+}
+.menu button {
+    background-color:greenyellow;
+    display: inline-block;
+    padding: 10px; /* Đặt padding giống nhau cho tất cả các nút */
+    margin: 0; /* Loại bỏ margin để tránh lệch */
+    border: 1px solid #ADFF2F; /* Đặt viền giống nhau */
+    margin-top: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color:aliceblue;
+    flex-direction: column;
+    min-height: 100vh;
+}
+h1, h2, h3 {
+    color:forestgreen;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    color: black;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+.fish-list, .competition-list {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.fish-item, .competition-item {
+    display: flex;
+    align-items: center;
+    background-color: ;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.fish-item img, .competition-item img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+.fish-details, .competition-details {
+    flex: 1;
+}
+
+    .fish-details h3, .competition-details h3 {
+        margin: 0;
+        color: seagreen;
+    }
+
+    .fish-details p, .competition-details p {
+        margin: 5px 0 0 0;
+        color:darkgray;
+    }

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\koishowapp\\KoiShow\\KoiShow\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4F98E3BB-BA5A-4A87-A623-0D18E5296685}|KoiShow\\KoiShow.csproj|d:\\koishowapp\\koishow\\koishow\\koishow\\views\\home\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4F98E3BB-BA5A-4A87-A623-0D18E5296685}|KoiShow\\KoiShow.csproj|solutionrelative:koishow\\views\\home\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F98E3BB-BA5A-4A87-A623-0D18E5296685}|KoiShow\\KoiShow.csproj|d:\\koishowapp\\koishow\\koishow\\koishow\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4F98E3BB-BA5A-4A87-A623-0D18E5296685}|KoiShow\\KoiShow.csproj|solutionrelative:koishow\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DangKy.cshtml",
+              "DocumentMoniker": "D:\\koishowapp\\KoiShow\\KoiShow\\KoiShow\\Views\\Home\\DangKy.cshtml",
+              "RelativeDocumentMoniker": "KoiShow\\Views\\Home\\DangKy.cshtml",
+              "ToolTip": "D:\\koishowapp\\KoiShow\\KoiShow\\KoiShow\\Views\\Home\\DangKy.cshtml",
+              "RelativeToolTip": "KoiShow\\Views\\Home\\DangKy.cshtml",
+              "ViewState": "AQIAADQAAAAAAAAAAAAqwE4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-17T07:32:33.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\koishowapp\\KoiShow\\KoiShow\\KoiShow\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "KoiShow\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\koishowapp\\KoiShow\\KoiShow\\KoiShow\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "KoiShow\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAACgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-17T07:23:43.813Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

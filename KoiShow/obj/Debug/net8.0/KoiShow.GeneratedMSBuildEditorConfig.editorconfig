@@ -1,0 +1,67 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = KoiShow
+build_property.RootNamespace = KoiShow
+build_property.ProjectDir = D:\koishowapp\KoiShow\KoiShow\KoiShow\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\koishowapp\KoiShow\KoiShow\KoiShow
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Home/DangKy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYW5nS3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Home/DangNhap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYW5nTmhhcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Home/DangXuat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYW5nWHVhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Home/ThemCaKoi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaGVtQ2FLb2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Home/TrangCaNhan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmFuZ0NhTmhhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Home/TrangChu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmFuZ0NodS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Home/TTChiTietCuocThi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUVENoaVRpZXRDdW9jVGhpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/koishowapp/KoiShow/KoiShow/KoiShow/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-f3cqdkgvql

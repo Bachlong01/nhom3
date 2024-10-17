@@ -1,0 +1,153 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thêm Cá Koi</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+
+<body>
+    <ul class="menu">
+        <li><button><a href="~/Home/TrangChu">Trang chủ</a></button></li>
+        <li id="profileLink"><button><a href="~/Home/TrangCaNhan">Profile</a></button></li>
+        <li id="addKoiLink"><button><a href="~/Home/ThemCaKoi">Thêm Cá Koi</a></button></li>
+        <li id="infoLink"><button><a href="~/Home/TTChiTietCuocThi">Thông tin</a></button></li>
+        <li id="loginLink"><button><a href="~/Home/DangNhap">Đăng Nhập</a></button></li>
+        <li id="registerLink"><button><a href="~/Home/DangKy">Đăng Ký</a></button></li>
+        <li id="logoutLink"><button><a href="~/Home/DangXuat">Đăng Xuất</a></button></li>
+    </ul>
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900" style="text-align: center;">Thêm Cá Koi</h2>
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form id="fishForm" onsubmit="handleFormSubmit(event)">
+            <label for="name">Tên Cá:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="description">Mô Tả:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="image">Ảnh Cá:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <button type="submit">Thêm Cá</button>
+        </form>
+
+        <h3>Danh Sách Cá Koi</h3>
+        <div id="fishes" class="fish-list"></div>
+    </div>
+
+    <script src="~/js/site.js"></script>
+    <script>
+
+        function updateNav() {
+            const user = getLoggedInUser();
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const profileLink = document.getElementById('profileLink');
+            const addKoiLink = document.getElementById('addKoiLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (user) {
+                // Nếu đã đăng nhập, ẩn liên kết đăng nhập và đăng ký
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+            } else {
+                // Nếu chưa đăng nhập, ẩn các liên kết khác
+                profileLink.style.display = 'none';
+                addKoiLink.style.display = 'none';
+                logoutLink.style.display = 'none';
+            }
+        }
+
+        function getFishes() {
+            const fishes = localStorage.getItem('fishes');
+            return fishes ? JSON.parse(fishes) : [];
+        }
+
+        function saveFishes(fishes) {
+            localStorage.setItem('fishes', JSON.stringify(fishes));
+        }
+
+        function displayFishes(targetElementId) {
+            const fishes = getFishes();
+            const fishList = document.getElementById(targetElementId);
+            fishList.innerHTML = '';
+
+            if (fishes.length === 0) {
+                fishList.innerHTML = '<p>Chưa có cá nào được thêm.</p>';
+                return;
+            }
+
+            fishes.forEach((fish) => {
+                const fishItem = document.createElement('div');
+                fishItem.className = 'fish-item';
+
+                const img = document.createElement('img');
+                img.src = fish.image;
+                img.alt = fish.name;
+
+                const details = document.createElement('div');
+                details.className = 'fish-details';
+
+                const name = document.createElement('h3');
+                name.textContent = fish.name;
+
+                const description = document.createElement('p');
+                description.textContent = fish.description;
+
+                details.appendChild(name);
+                details.appendChild(description);
+                fishItem.appendChild(img);
+                fishItem.appendChild(details);
+
+                fishList.appendChild(fishItem);
+            });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của form
+
+            const name = document.getElementById('name').value.trim();
+            const description = document.getElementById('description').value.trim();
+            const imageInput = document.getElementById('image');
+
+            if (imageInput.files && imageInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (event) {
+                    const imageData = event.target.result;
+
+                    const newFish = {
+                        name: name,
+                        description: description,
+                        image: imageData
+                    };
+
+                    const fishes = getFishes();
+                    fishes.push(newFish);
+                    saveFishes(fishes);
+                    displayFishes('fishes');
+
+                    const user = getLoggedInUser();
+                    if (user) {
+                        user.koiProfiles.push(newFish);
+                        updateLoggedInUser(user);
+                        displayUserProfile();
+                    }
+
+                    displayFeaturedFishes();
+                    document.getElementById('fishForm').reset(); // Reset form
+                };
+
+                reader.readAsDataURL(imageInput.files[0]);
+            } else {
+                alert('Vui lòng chọn ảnh cho cá.');
+            }
+        }
+
+        // Gọi hàm updateNav khi trang được tải
+        window.onload = updateNav;
+    </script>
+</body>
+</html>
