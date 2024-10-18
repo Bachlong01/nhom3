@@ -1,0 +1,111 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng ký thông tin </title>
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <ul class="menu">
+        <li><button><a href="~/Home/TrangChu">Trang chủ</a></button></li>
+        <li id="profileLink"><button><a href="~/Home/TrangCaNhan">Profile</a></button></li>
+        <li id="addKoiLink"><button><a href="~/Home/ThemCaKoi">Thêm Cá Koi</a></button></li>
+        <li id="infoLink"><button><a href="~/Home/TTChiTietCuocThi">Thông tin</a></button></li>
+        <li id="loginLink"><button><a href="~/Home/DangNhap">Đăng Nhập</a></button></li>
+        <li id="registerLink"><button><a href="~/Home/DangKy">Đăng Ký</a></button></li>
+        <li id="logoutLink"><button><a href="~/Home/DangXuat">Đăng Xuất</a></button></li>
+    </ul>
+
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900" style="text-align: center;">Đăng ký tài khoản</h2>
+
+    <form id="registerForm">
+        <label for="username">Tên Người Dùng:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Mật Khẩu:</label>
+        <input type="password" id="password" name="password" required>
+        <label for="passwordAgain">Xác Nhận Mật Khẩu:</label>
+        <input type="password" id="passwordAgain" name="passwordAgain" required>
+        <button type="button" onclick="handleRegister()">Đăng Ký</button>
+    </form>
+
+    <script>
+        function getUsers() {
+            return JSON.parse(localStorage.getItem('users')) || [];
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        function handleRegister() {
+            const form = document.getElementById('registerForm');
+            if (form) {
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
+                const passwordAgain = document.getElementById('passwordAgain').value.trim();
+                if (username === '' || password === '' || passwordAgain === '') {
+                    alert('Vui lòng điền đầy đủ thông tin.');
+                    return;
+                }
+
+                const users = getUsers();
+                const userExists = users.some(user => user.username === username);
+
+                if (userExists) {
+                    alert('Tên người dùng đã tồn tại. Vui lòng chọn tên khác.');
+                    return;
+                }
+                if (password != passwordAgain) {
+                    alert('Mật khẩu không trùng khớp');
+                    return;
+                }
+
+                const newUser = {
+                    username: username,
+                    password: password,
+                    passwordAgain: passwordAgain,
+                    koiProfiles: []
+                };
+
+                users.push(newUser);
+                saveUsers(users);
+
+                alert('Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.');
+
+                // Chuyển hướng đến trang đăng nhập nếu cần
+                window.location.href = "/Home/DangNhap"; // Thay đổi đường dẫn đến trang đăng nhập nếu cần
+            }
+        }
+
+        function getLoggedInUser() {
+            return JSON.parse(localStorage.getItem('loggedInUser'));
+        }
+
+        function updateNav() {
+            const user = getLoggedInUser();
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const profileLink = document.getElementById('profileLink');
+            const addKoiLink = document.getElementById('addKoiLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (user) {
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+            } else {
+                profileLink.style.display = 'none';
+                addKoiLink.style.display = 'none';
+                logoutLink.style.display = 'none';
+            }
+        }
+
+        window.onload = function () {
+            updateNav();
+            // displayUserProfile(); // Chức năng này cần được định nghĩa nếu cần sử dụng
+        };
+    </script>
+</body>
+</html>
