@@ -1,0 +1,143 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = KoiShow.WebApp
+build_property.RootNamespace = KoiShow.WebApp
+build_property.ProjectDir = C:\Users\lvlon\source\repos\KoiShow\KoiShow.WebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\lvlon\source\repos\KoiShow\KoiShow.WebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Account/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Account/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Account/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Account/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/AddFish.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkRmlzaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Candidate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FuZGlkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Competition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGV0aXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCategory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCategory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCategory/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCategory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCompetition/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ29tcGV0aXRpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCompetition/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ29tcGV0aXRpb25cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCompetition/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ29tcGV0aXRpb25cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCompetition/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ29tcGV0aXRpb25cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/KoiCompetition/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS29pQ29tcGV0aXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/MyProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lvlon/source/repos/KoiShow/KoiShow.WebApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-76l3euv8q8

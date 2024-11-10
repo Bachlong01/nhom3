@@ -1,0 +1,378 @@
+﻿@page
+@model KoiShow.WebApp.Pages.MyProfileModel
+
+@{
+    ViewData["Title"] = "Trang Cá Nhân";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Tiêu đề trang */
+        #profile {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-top: 50px;
+        }
+
+        /* Cấu trúc hồ sơ người dùng */
+        #userProfile {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            #userProfile h3 {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+                color: #4a5568;
+            }
+
+            #userProfile p {
+                font-size: 1rem;
+                color: #4a5568;
+            }
+
+        /* Danh sách cá Koi */
+        .fish-list-container {
+            margin-top: 40px;
+        }
+
+            .fish-list-container h3 {
+                font-size: 2rem;
+                color: #2d3748;
+                margin-bottom: 20px;
+            }
+
+        .fish-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0;
+        }
+
+        .fish-item {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+            .fish-item:hover {
+                transform: translateY(-10px);
+            }
+
+            .fish-item img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-right: 20px;
+            }
+
+        .fish-details {
+            flex: 1;
+        }
+
+            .fish-details h3 {
+                font-size: 1.5rem;
+                color: #2d3748;
+                margin: 0;
+            }
+
+            .fish-details p {
+                margin-top: 10px;
+                color: #4a5568;
+                font-size: 1rem;
+            }
+
+        .form-input {
+            width: 60%; /* Chiều rộng 100% */
+            padding: 10px; /* Padding cho ô nhập */
+            margin: 5px 0; /* Margin trên và dưới */
+            border: 1px solid #ccc; /* Viền cho ô nhập */
+            border-radius: 5px; /* Bo góc cho ô nhập */
+            box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng */
+        }
+
+        button {
+            background-color: #659DBD;
+            color: #0ef;
+            border: 2px solid #659DBD;
+            padding: 7px 15px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Thêm khoảng cách giữa các nút */
+        }
+
+            button:hover {
+                background-color: #659DBD;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="only">
+        <h2 style="margin-top:100px " id="profile">Trang cá Nhân</h2>
+        <div id="userProfile"></div>
+        <button onclick="showRegistrationForm()" style="position: fixed; right: 10px; bottom: 10px; background-color: #659DBD; color: #0ef; border: 2px solid #659DBD; padding: 10px 15px; font-size: 1em; cursor: pointer; transition: background-color 0.3s ease;">Đăng ký tham gia</button>
+        <div id="registrationForm" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); width: 500px; text-align: justify;">
+            <h3>Đăng ký dự thi</h3>
+            <form id="registrationFields" style="display: flex; flex-direction: column;">
+                <label>Họ và tên: <input type="text" id="name" class="form-input" required style="margin-left:70px" /></label>
+                <label>Địa chỉ: <input type="text" id="address" class="form-input" required style="margin-left:90px" /></label>
+                <label>Số điện thoại: <input type="text" id="phone" class="form-input" required style="margin-left:45px" /></label>
+                <label>Kích thước cá: <input type="number" id="fishSize" class="form-input" required style="margin-left:39px" /></label>
+                <label>
+                    Phân loại cá dự thi:
+                    <select id="category" name="category" required style="display: inline; width: 277px; height: 40px; border: 1px solid #ddd; border-radius: 5px; padding: 5px; margin-left: 5px;">
+                        <option value="">Chọn cuộc thi</option>
+                        @foreach (var category in Model.Koicategories)
+                        {
+                            <option value="@category.CategoryId">@category.CategoryName</option>
+                        }
+                    </select>
+                </label>
+                <label>
+                    Cuộc thi:
+                    <select id="competition" name="competition" required style="display: inline; width: 277px; height: 40px; border: 1px solid #ddd; border-radius: 5px; padding: 5px; margin-left: 80px;margin-top: 5px;margin-bottom:5px;">
+                        <option value="">Chọn cuộc thi</option>
+                        @foreach (var competition in Model.Competitions.Where(c => c.StartDate > DateTime.Now))
+                        {
+                            <option value="@competition.CompetitionId">@competition.Title</option>
+                        }
+                    </select>
+                </label>
+                <label for="gender" style="display: inline; margin-right: 10px;">
+                    Giới tính của cá:
+                    <select id="gender" required style="display: inline; width: 277px; height: 40px; border: 1px solid #ddd; border-radius: 5px; padding: 5px; margin-left:26px;">
+                        <option value="">Chọn giới tính</option>
+                        <option value="male">Đực</option>
+                        <option value="female">Cái</option>
+                    </select>
+                </label>
+                <button type="button" onclick="submitRegistration()">Xác nhận</button>
+                <button type="button" onclick="closeRegistrationForm()">Hủy</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function showRegistrationForm() {
+            const user = getLoggedInUser();
+            if (user.participationStatus && user.participationStatus.includes("competition")) {
+                alert('Bạn đã đăng ký tham gia cuộc thi này.');
+                return;
+            }
+
+            document.getElementById('registrationForm').style.display = 'block';
+        }
+
+        function closeRegistrationForm() {
+            document.getElementById('registrationForm').style.display = 'none';
+        }
+
+        function submitRegistration() {
+            // Lấy dữ liệu từ các trường nhập liệu
+            const name = document.getElementById('name').value.trim(); // Sửa lại tên biến từ 'username' thành 'name'
+            const address = document.getElementById('address').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const fishType = document.getElementById('category').value.trim();
+            const fishSize = document.getElementById('fishSize').value.trim();
+            const gender = document.getElementById('gender').value; // Đảm bảo lấy giá trị từ select
+
+            // Kiểm tra các trường bắt buộc
+            if (!name || !address || !phone || !fishType || !fishSize || !gender) {
+                alert('Vui lòng điền đầy đủ thông tin.');
+                return;
+            }
+
+            // Lấy thông tin người dùng từ localStorage
+            const user = JSON.parse(localStorage.getItem('loggedInUser')) || {};
+
+            // Cập nhật trạng thái tham gia
+            if (!user.participationStatus) {
+                user.participationStatus = [];
+            }
+
+            // Kiểm tra xem người dùng đã đăng ký chưa
+            if (user.participationStatus.includes("competition")) {
+                alert('Bạn đã đăng ký tham gia cuộc thi này.');
+                return;
+            }
+
+            user.participationStatus.push("competition");
+
+            // Lưu thông tin đăng ký vào user
+            user.address = address;
+            user.phone = phone;
+            user.fishType = fishType;
+            user.fishSize = fishSize;
+            user.gender = gender;
+            const registrationData = {
+                name: name,
+                address: address,
+                phone: phone,
+                fishType: fishType,
+                fishSize: fishSize,
+                gender: gender
+            };
+            saveRegistrationData(user.username, registrationData);
+            // Cập nhật người dùng trong localStorage
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
+
+            // Thông báo thành công
+            alert('Đăng ký thành công!');
+            closeRegistrationForm(); // Đóng biểu mẫu đăng ký sau khi thành công
+        }
+
+        // Hàm để lưu thông tin đăng ký vào localStorage
+        function saveRegistrationData(username, registrationData) {
+            let registrations = JSON.parse(localStorage.getItem(`${username}_registrations`) || "[]");
+            registrations.push(registrationData);
+            localStorage.setItem(`${username}_registrations`, JSON.stringify(registrations));
+        } function deleteKoi(index) {
+            if (confirm("Bạn có chắc chắn muốn xóa cá Koi này?")) {
+                const user = getLoggedInUser();
+                if (user) {
+                    let koiProfiles = JSON.parse(localStorage.getItem(`${user.username}_fishes`) || "[]");
+                    koiProfiles.splice(index, 1); // Xóa cá Koi theo chỉ số
+                    localStorage.setItem(`${user.username}_fishes`, JSON.stringify(koiProfiles));
+                    user.koiProfiles = koiProfiles;
+                    updateLoggedInUser(user);
+                    displayUserProfile(); // Cập nhật lại hồ sơ người dùng
+                    displayFishes('fishes'); // Cập nhật lại danh sách cá
+                }
+            }
+        }
+        function getFishes() {
+            const user = getLoggedInUser();
+            return user ? JSON.parse(localStorage.getItem(`${user.username}_fishes`) || "[]") : [];
+        }
+
+        // Hàm để lưu danh sách người dùng vào LocalStorage
+        function saveUsers(users) {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+        window.onload = function () {
+            displayUserProfile(); // Gọi lại khi tải trang
+        };
+        function getLoggedInUser() {
+            const user = JSON.parse(localStorage.getItem('loggedInUser'));
+            console.log(user); // Kiểm tra xem người dùng có được lấy đúng không
+            return user;
+        }
+
+        function updateLoggedInUser(user) {
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
+        }
+        function getFishes() {
+            const user = getLoggedInUser();
+            return user ? JSON.parse(localStorage.getItem(`${user.username}_fishes`) || "[]") : [];
+        }
+        function displayFishes(targetElementId) {
+            const fishes = getFishes();
+            const fishList = document.getElementById(targetElementId);
+            fishList.innerHTML = '';
+
+            if (fishes.length === 0) {
+                fishList.innerHTML = '<p>Chưa có cá nào được thêm.</p>';
+                return;
+            }
+
+            fishes.forEach((fish) => {
+                const fishItem = document.createElement('div');
+                fishItem.className = 'fish-item';
+
+                const img = document.createElement('img');
+                img.src = fish.image;
+                img.alt = fish.name;
+
+                const details = document.createElement('div');
+                details.className = 'fish-details';
+
+                const name = document.createElement('h3');
+                name.textContent = fish.name;
+
+                const description = document.createElement('p');
+                description.textContent = fish.description;
+
+                details.appendChild(name);
+                details.appendChild(description);
+                fishItem.appendChild(img);
+                fishItem.appendChild(details);
+
+                // Thêm fishItem vào đầu fishList
+                const firstChild = fishList.firstChild; // Lấy phần tử đầu tiên hiện tại
+                if (firstChild) {
+                    fishList.insertBefore(fishItem, firstChild); // Chèn fishItem trước phần tử đầu tiên
+                } else {
+                    fishList.appendChild(fishItem); // Nếu không có phần tử nào, thêm vào cuối
+                }
+            });
+
+        }
+        function displayUserProfile() {
+            const user = getLoggedInUser();
+            const profileDiv = document.getElementById('userProfile');
+            if (!user) {
+                window.location.href = '/login';
+            }
+            if (!user.koiProfiles) {
+                user.koiProfiles = JSON.parse(localStorage.getItem(`${user.username}_fishes`) || "[]");
+            }
+            let html = `<h3>Người Dùng: ${user.username}</h3>`;
+
+            if (user.koiProfiles.length === 0) {
+                html += '<p>Bạn chưa thêm hồ sơ cá Koi nào. <a href="/addfish" data-section="add">Thêm cá Koi ngay</a>.</p>';
+            } else {
+                html += '<h4>Hồ Sơ Cá Koi:</h4>';
+                user.koiProfiles.forEach((fish, index) => {
+                    html += `
+                        <div class="fish-item">
+                            <img src="${fish.image}" alt="${fish.name}">
+                            <div class="fish-details">
+                                <h3>${fish.name}</h3>
+                                <p>${fish.description}</p>
+                                <button onclick="deleteKoi(${index})">Xóa</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            profileDiv.innerHTML = html;
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            displayUserProfile(); // Gọi hàm khi DOM đã tải xong
+        });
+
+        </script>
+</body>
+
+</html>

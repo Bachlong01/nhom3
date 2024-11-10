@@ -1,0 +1,14 @@
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\bin\Debug\net8.0\KoiShow.Repositories.deps.json
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\bin\Debug\net8.0\KoiShow.Repositories.dll
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\bin\Debug\net8.0\KoiShow.Repositories.pdb
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\KoiShow.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\KoiShow.Repositories.AssemblyInfoInputs.cache
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\KoiShow.Repositories.AssemblyInfo.cs
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\KoiShow.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\KoiShow.Repositories.dll
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\refint\KoiShow.Repositories.dll
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\KoiShow.Repositories.pdb
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\ref\KoiShow.Repositories.dll
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\bin\Debug\net8.0\KoiShow.Repositories.runtimeconfig.json
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\KoiShow.Repositories.csproj.AssemblyReference.cache
+C:\Users\lvlon\source\repos\KoiShow\KoiShow.Repositories\obj\Debug\net8.0\KoiShow.Repositories.genruntimeconfig.cache

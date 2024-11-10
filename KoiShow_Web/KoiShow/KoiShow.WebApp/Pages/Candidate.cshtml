@@ -1,0 +1,139 @@
+﻿@page
+@model KoiShow.WebApp.Pages.CandidateModel
+@{
+    ViewData["Title"] = "Thông tin thí sinh";
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Candidate</title>
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/js/site.js" />
+    <style>
+        .candidate-list {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .candidate-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .candidate-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Phần hiển thị chi tiết thí sinh */
+        .candidate-details {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Danh sách thí sinh -->
+    <div class="candidate-list" id="candidateList">
+        <h2 style="text-align:center">Danh sách thí sinh đã đăng ký tham gia</h2>
+        <div id="candidateContainer"></div>
+    </div>
+
+    <!-- Chi tiết thí sinh -->
+    <div class="candidate-details" id="candidateDetails" style="display:none;">
+        <h3>Chi tiết thí sinh</h3>
+        <div id="candidateInfo"></div>
+    </div>
+
+    <script>
+        // Lấy thông tin người dùng đã đăng nhập
+        function getLoggedInUser() {
+            return JSON.parse(localStorage.getItem('loggedInUser'));
+        }
+        // Lấy danh sách thí sinh từ localStorage
+        function getCandidates() {
+            const candidates = [];
+            // Kiểm tra tất cả các key trong localStorage
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+
+                // Chỉ lấy các key liên quan đến registrations (như member1_registrations)
+                if (key.includes('_registrations')) {
+                    const registrations = localStorage.getItem(key);
+                    if (registrations) {
+                        candidates.push({ username: key.split('_')[0], details: JSON.parse(registrations) });
+                    }
+                }
+            }
+            return candidates;
+        }
+
+        // Hiển thị danh sách thí sinh
+        function displayCandidates() {
+            const candidates = getCandidates(); // Lấy danh sách thí sinh
+            const candidateContainer = document.getElementById('candidateContainer'); // Lấy phần tử hiển thị danh sách
+
+            if (candidates.length === 0) {
+                candidateContainer.innerHTML = '<p>Chưa có thí sinh nào đăng ký tham gia.</p>';
+                return;
+            }
+
+            let html = '<h3>Danh sách Thí Sinh:</h3>';
+
+            // Tạo danh sách thí sinh đã đăng ký
+            candidates.forEach((candidate, index) => {
+                html += `
+                    <div class="candidate-item" onclick="showCandidateDetails(${index})">
+                        <p class="candidate-name">Tên thí sinh: ${candidate.username}</p>
+                        <p>Đã đăng ký tham gia cuộc thi</p>
+                    </div>
+                `;
+            });
+
+            candidateContainer.innerHTML = html;
+        }
+
+        // Hiển thị chi tiết thí sinh
+        function showCandidateDetails(index) {
+            const candidates = getCandidates(); // Lấy danh sách thí sinh
+            const candidate = candidates[index]; // Lấy thí sinh theo chỉ số index
+
+            const candidateInfo = document.getElementById('candidateInfo'); // Phần tử hiển thị chi tiết thí sinh
+            let html = `<h3>${candidate.username}</h3>`;
+
+            // Hiển thị thông tin chi tiết về cá Koi của thí sinh
+            candidate.details.forEach(fish => {
+                html += `
+                    <div class="fish-item">
+                        <p><strong>Tên cá:</strong> ${fish.name}</p>
+                        <p><strong>Địa chỉ:</strong> ${fish.address}</p>
+                        <p><strong>Số điện thoại:</strong> ${fish.phone}</p>
+                        <p><strong>Loại cá:</strong> ${fish.fishType}</p>
+                        <p><strong>Size cá:</strong> ${fish.fishSize}</p>
+                        <p><strong>Giới tính:</strong> ${fish.gender}</p>
+                    </div>
+                `;
+            });
+
+            candidateInfo.innerHTML = html;
+            document.getElementById('candidateDetails').style.display = 'block';
+        }
+
+        // Gọi hàm để hiển thị danh sách thí sinh khi trang được tải
+        document.addEventListener("DOMContentLoaded", function () {
+            displayCandidates(); // Gọi hàm khi DOM đã tải xong
+        });
+
+    </script>
+
+</body>
+</html>
