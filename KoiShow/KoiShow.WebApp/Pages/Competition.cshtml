@@ -1,0 +1,165 @@
+﻿@page
+@model KoiShow.WebApp.Pages.CompetitionModel
+@{
+    ViewData["Title"] = "Thông tin cuộc thi";
+}
+<style>
+    /* Cấu hình chung cho trang */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f7fc;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 20px;
+        color: #5d6d7e;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cải tiến bảng */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    th {
+        background-color: #5d6d7e;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    td {
+        background-color: #f9f9f9;
+        color: #555;
+    }
+
+    tr:nth-child(even) td {
+        background-color: #f1f1f1;
+    }
+
+    tr:hover td {
+        background-color: #ecf0f1;
+    }
+
+    table thead {
+        border-bottom: 2px solid #ddd;
+    }
+
+    /* Cải tiến thông báo khi không có dữ liệu */
+    .no-data {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #e74c3c;
+        margin-top: 20px;
+    }
+
+    /* Ô tìm kiếm */
+    #searchContainer {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #searchCompetition {
+        padding: 8px;
+        font-size: 1rem;
+        width: 80%;
+        max-width: 400px;
+    }
+</style>
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <div id="searchContainer">
+        <input type="text" id="searchCompetition" placeholder="Tìm kiếm cuộc thi..." oninput="searchCompetitions()">
+    </div>
+
+    @if (Model.Competitions != null && Model.Competitions.Any())
+    {
+        <div id="competition-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tiêu đề</th>
+                        <th>Mô tả</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var competition in Model.Competitions)
+                    {
+                        <tr class="competition-item">
+                            <td>@competition.CompetitionId</td>
+                            <td class="title">@competition.Title</td>
+                            <td class="description">@competition.Description</td>
+                            <td>@competition.StartDate</td>
+                            <td>@competition.EndDate</td>
+                            <td>@competition.Status</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <p class="no-data">Không có cuộc thi nào để hiển thị.</p>
+    }
+</div>
+
+<script>
+    function searchCompetitions() {
+        const query = document.getElementById('searchCompetition').value.toLowerCase();
+        const competitions = document.querySelectorAll('.competition-item');
+
+        let hasResult = false;
+
+        competitions.forEach(competition => {
+            const title = competition.querySelector('.title').textContent.toLowerCase();
+            const description = competition.querySelector('.description').textContent.toLowerCase();
+
+            if (title.includes(query) || description.includes(query)) {
+                competition.style.display = '';
+                hasResult = true;
+            } else {
+                competition.style.display = 'none';
+            }
+        });
+
+        const noDataMessage = document.querySelector('.no-data');
+        if (!hasResult) {
+            if (!noDataMessage) {
+                const message = document.createElement('p');
+                message.className = 'no-data';
+                message.textContent = 'Không tìm thấy cuộc thi nào phù hợp.';
+                document.getElementById('competition-list').appendChild(message);
+            }
+        } else if (noDataMessage) {
+            noDataMessage.remove();
+        }
+    }
+</script>

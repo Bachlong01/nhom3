@@ -1,0 +1,55 @@
+﻿@page
+@model KoiShow.WebApp.Pages.KoiCompetition.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitions[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitions[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitions[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitions[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competitions[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Competitions != null && Model.Competitions.Any())
+        {
+            foreach (var item in Model.Competitions)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EndDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.CompetitionId">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.CompetitionId">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.CompetitionId">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6">No competitions found.</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
