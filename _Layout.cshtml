@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Koi Show Management System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KoiShow.WebApp.styles.css" asp-append-version="true" />
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            padding-top: 60px; /* Adjust this padding to match the header height */
+        }
+
+        /* Header styles */
+        header {
+            position: fixed; /* Keep the header fixed at the top */
+            top: 0; /* Position it at the top */
+            left: 0; /* Align it to the left */
+            width: 100%; /* Full width */
+            background-color: #333;
+            color: white;
+            padding: 5px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+            header h1 {
+                margin: 0;
+                font-size: 1.5em;
+                text-align: center;
+                color: white;
+            }
+
+        /* Menu styles */
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+            .menu li {
+                position: relative;
+                margin: 0 20px;
+            }
+
+                .menu li a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    display: inline-block;
+                    font-weight: bold;
+                    transition: background-color 0.3s, color 0.3s;
+                }
+
+                    .menu li a:hover {
+                        background-color: rgba(255, 255, 255, 0.2);
+                        border-radius: 4px;
+                    }
+
+        /* Dropdown menu styles */
+        .dropdown-content {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            min-width: 160px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+            .dropdown-content a {
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: center;
+                transition: background-color 0.3s;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+
+        /* Show dropdown on hover */
+        .account:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Content styles */
+        .content {
+            padding: 20px;
+            background-color: #f4f4f4;
+            margin-top: 20px; /* Adjust if needed */
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9em;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            footer p {
+                margin: 5px 0;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="menu">
+            <li><a href="/index">Trang chủ</a></li>
+            <li id="candidatelink"><a href="/candidate">DS Tham Gia</a></li>
+            <li id="addKoiLink"><a href="/AddFish">Thêm Cá Koi</a></li>
+            <li id="infoLink"><a href="/competition">Thông tin cuộc thi</a></li>
+            <!-- Account dropdown menu -->
+            <li class="account">
+                <a href="javascript:void(0)">Tài khoản</a>
+                <div class="dropdown-content">
+                    <a href="/MyProfile" id="profileLink">Trang Cá Nhân</a>
+                    <a href="/Login" id="loginLink">Đăng Nhập</a>
+                    <a href="/Register" id="registerLink">Đăng Ký</a>
+                    <a href="/Logout" id="logoutLink">Đăng Xuất</a>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <p>Liên hệ: Địa chỉ triển lãm - Điện thoại: 0123 456 789 - Email: contact@koi-exhibition.com; koishow@znavn.com</p>
+        <p>&copy; 2024 Koi Show Management System</p>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        function getLoggedInUser() {
+            return JSON.parse(localStorage.getItem('loggedInUser'));
+        }
+        function updateNav() {
+            const user = JSON.parse(localStorage.getItem('loggedInUser'));  // Đảm bảo lấy đúng thông tin người dùng
+            const loginLink = document.getElementById('loginLink');
+            const registerLink = document.getElementById('registerLink');
+            const profileLink = document.getElementById('profileLink');
+            const addKoiLink = document.getElementById('addKoiLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (user) {
+                // Nếu đã đăng nhập, ẩn liên kết đăng nhập và đăng ký
+                loginLink.style.display = 'none';
+                registerLink.style.display = 'none';
+                profileLink.style.display = 'block';  // Hiển thị trang cá nhân
+                logoutLink.style.display = 'block';  // Hiển thị đăng xuất
+            } else {
+                // Nếu chưa đăng nhập, ẩn các liên kết khác
+                profileLink.style.display = 'none';
+                logoutLink.style.display = 'none';
+                
+            }
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('loggedInUser');
+            console.log(localStorage.getItem('loggedInUser')); 
+            updateNav();
+            alert('Đăng xuất thành công!');
+            window.location.href = '/Index';  // Hoặc có thể dùng location.reload() để tải lại trang
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+        window.onload = function () {
+            updateNav();
+        };
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
