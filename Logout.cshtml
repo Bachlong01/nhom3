@@ -1,0 +1,31 @@
+﻿@page
+@model KoiShow.WebApp.Pages.LogoutModel
+@{
+    ViewData["Title"] = "Logout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Koi Show Management System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <h2>@ViewData["Title"]</h2>
+    <form method="post" asp-page-handler="Logout">
+        <button onclick="handleLogout()">Đăng xuất</button>
+    </form>
+        <script>
+            function handleLogout() {
+                // Xóa thông tin đăng nhập từ localStorage
+                localStorage.removeItem('loggedInUser');
+                alert('Đăng xuất thành công!');
+
+                // Chuyển hướng đến trang logout trên server
+                window.location.href = '/Logout';
+            }
+        </script>
+
+</body>
+</html>
