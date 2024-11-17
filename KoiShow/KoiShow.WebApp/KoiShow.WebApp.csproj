@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Typical.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\KoiShow.Repositories\KoiShow.Repositories.csproj" />
     <ProjectReference Include="..\KoiShow.Service\KoiShow.Service.csproj" />
   </ItemGroup>
@@ -27,18 +23,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Typical.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Typical.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Typical.cshtml" />
   </ItemGroup>
 
 </Project>

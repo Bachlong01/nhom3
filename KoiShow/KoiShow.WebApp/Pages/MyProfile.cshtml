@@ -226,7 +226,7 @@
                 alert('Bạn đã đăng ký tham gia cuộc thi này.');
                 return;
             }
-
+            
             user.participationStatus.push("competition");
 
             // Lưu thông tin đăng ký vào user
@@ -251,13 +251,24 @@
             alert('Đăng ký thành công!');
             closeRegistrationForm(); // Đóng biểu mẫu đăng ký sau khi thành công
         }
-
-        // Hàm để lưu thông tin đăng ký vào localStorage
         function saveRegistrationData(username, registrationData) {
+            // Lấy danh sách các đăng ký của người dùng từ localStorage
             let registrations = JSON.parse(localStorage.getItem(`${username}_registrations`) || "[]");
+
+            // Kiểm tra xem điểm đã được lưu trong dữ liệu chưa
+            if (registrationData.score === undefined || registrationData.score === null) {
+                // Nếu chưa có điểm, random điểm từ 6 đến 10 và lưu vào registrationData
+                registrationData.score = Math.floor(Math.random() * 5) + 6;
+            }
+
+            // Thêm đăng ký vào danh sách
             registrations.push(registrationData);
+
+            // Lưu lại danh sách đăng ký vào localStorage
             localStorage.setItem(`${username}_registrations`, JSON.stringify(registrations));
-        } function deleteKoi(index) {
+        }
+
+        function deleteKoi(index) {
             if (confirm("Bạn có chắc chắn muốn xóa cá Koi này?")) {
                 const user = getLoggedInUser();
                 if (user) {
@@ -347,20 +358,31 @@
             if (!user.koiProfiles) {
                 user.koiProfiles = JSON.parse(localStorage.getItem(`${user.username}_fishes`) || "[]");
             }
+
             let html = `<h3>Người dùng: ${user.username}</h3>
-                      Vai trò: ${user.role}`;
+                        Vai trò: ${user.role}`;
 
             if (user.koiProfiles.length === 0) {
                 html += '<p>Bạn chưa thêm hồ sơ cá Koi nào. <a href="/addfish" data-section="add">Thêm cá Koi ngay</a>.</p>';
             } else {
                 html += '<h4>Hồ Sơ Cá Koi:</h4>';
                 user.koiProfiles.forEach((fish, index) => {
+                    // Kiểm tra nếu điểm chưa được lưu, random điểm và lưu vào dữ liệu cá
+                    if (!fish.score) {
+                        fish.score = Math.floor(Math.random() * 5) + 6;
+                        // Lưu lại cá Koi với điểm đã random vào localStorage
+                        let koiProfiles = JSON.parse(localStorage.getItem(`${user.username}_fishes`) || "[]");
+                        koiProfiles[index] = fish; // Cập nhật cá Koi tại index tương ứng
+                        localStorage.setItem(`${user.username}_fishes`, JSON.stringify(koiProfiles));
+                    }
+
                     html += `
                         <div class="fish-item">
                             <img src="${fish.image}" alt="${fish.name}">
                             <div class="fish-details">
                                 <h3>${fish.name}</h3>
                                 <p>${fish.description}</p>
+                                <p>Điểm: ${fish.score}/10</p>
                                 <button onclick="deleteKoi(${index})">Xóa</button>
                             </div>
                         </div>

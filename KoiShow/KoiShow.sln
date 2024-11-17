@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoiShow.Service", "KoiShow.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoiShow.Repositories", "KoiShow.Repositories\KoiShow.Repositories.csproj", "{E338DAD3-7F16-4179-BB88-6BF913AA45CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTestProject", "MSTestProject\MSTestProject.csproj", "{4CDA684F-230E-473F-B22E-2A42A9B00403}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E338DAD3-7F16-4179-BB88-6BF913AA45CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E338DAD3-7F16-4179-BB88-6BF913AA45CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E338DAD3-7F16-4179-BB88-6BF913AA45CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CDA684F-230E-473F-B22E-2A42A9B00403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CDA684F-230E-473F-B22E-2A42A9B00403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CDA684F-230E-473F-B22E-2A42A9B00403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CDA684F-230E-473F-B22E-2A42A9B00403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,44 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\typical.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\typical.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\typical.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\typical.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\addfish.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\addfish.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\candidate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\candidate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\addfish.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\addfish.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\koishow.webapp\\pages\\myprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ECA177DA-886A-4FBD-92DF-98A58FD3E516}|KoiShow.WebApp\\KoiShow.WebApp.csproj|solutionrelative:koishow.webapp\\pages\\myprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CDA684F-230E-473F-B22E-2A42A9B00403}|MSTestProject\\MSTestProject.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\mstestproject\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CDA684F-230E-473F-B22E-2A42A9B00403}|MSTestProject\\MSTestProject.csproj|solutionrelative:mstestproject\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CDA684F-230E-473F-B22E-2A42A9B00403}|MSTestProject\\MSTestProject.csproj|c:\\users\\lvlon\\source\\repos\\koishow_web\\koishow\\mstestproject\\mstestproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4CDA684F-230E-473F-B22E-2A42A9B00403}|MSTestProject\\MSTestProject.csproj|solutionrelative:mstestproject\\mstestproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,136 +34,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Typical.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Typical.cshtml.cs",
-              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\Typical.cshtml.cs",
-              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Typical.cshtml.cs",
-              "RelativeToolTip": "KoiShow.WebApp\\Pages\\Typical.cshtml.cs",
+              "DocumentIndex": 5,
+              "Title": "MSTestProject.csproj",
+              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\MSTestProject\\MSTestProject.csproj",
+              "RelativeDocumentMoniker": "MSTestProject\\MSTestProject.csproj",
+              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\MSTestProject\\MSTestProject.csproj",
+              "RelativeToolTip": "MSTestProject\\MSTestProject.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T07:43:39.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Candidate.cshtml",
-              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Candidate.cshtml",
-              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\Candidate.cshtml",
-              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Candidate.cshtml",
-              "RelativeToolTip": "KoiShow.WebApp\\Pages\\Candidate.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T07:43:28.496Z",
-              "EditorCaption": ""
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-16T05:55:30.399Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AddFish.cshtml",
-              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\AddFish.cshtml",
-              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\AddFish.cshtml",
-              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\AddFish.cshtml",
-              "RelativeToolTip": "KoiShow.WebApp\\Pages\\AddFish.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T07:43:27.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\_ViewStart.cshtml",
-              "RelativeToolTip": "KoiShow.WebApp\\Pages\\_ViewStart.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T07:43:25.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Typical.cshtml",
-              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Typical.cshtml",
-              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\Typical.cshtml",
-              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Typical.cshtml",
-              "RelativeToolTip": "KoiShow.WebApp\\Pages\\Typical.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T07:36:59.658Z",
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\MSTestProject\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "MSTestProject\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\MSTestProject\\UnitTest1.cs",
+              "RelativeToolTip": "MSTestProject\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T05:54:46.258Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Index.cshtml",
-              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\Index.cshtml",
-              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Index.cshtml",
-              "RelativeToolTip": "KoiShow.WebApp\\Pages\\Index.cshtml",
-              "ViewState": "AQIAAKgAAAAAAAAAAAAAAL8AAAA9AAAA",
+              "Title": "AddFish.cshtml",
+              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\AddFish.cshtml",
+              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\AddFish.cshtml",
+              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\AddFish.cshtml",
+              "RelativeToolTip": "KoiShow.WebApp\\Pages\\AddFish.cshtml",
+              "ViewState": "AQIAAOEAAAAAAAAAAAAowO8AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-10T07:44:51.753Z",
+              "WhenOpened": "2024-11-15T05:17:39.653Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\_ViewImports.cshtml",
-              "RelativeToolTip": "KoiShow.WebApp\\Pages\\_ViewImports.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T07:43:25.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "KoiShow.WebApp\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T07:43:24.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "MyProfile.cshtml",
               "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\MyProfile.cshtml",
               "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\MyProfile.cshtml",
               "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\MyProfile.cshtml",
               "RelativeToolTip": "KoiShow.WebApp\\Pages\\MyProfile.cshtml",
-              "ViewState": "AQIAADABAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIwBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T07:33:00.526Z",
+              "WhenOpened": "2024-11-15T04:57:35.286Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "KoiShow.WebApp\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Index.cshtml",
+              "RelativeToolTip": "KoiShow.WebApp\\Pages\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHkAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T07:32:34.704Z",
+              "WhenOpened": "2024-11-13T07:25:00.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Candidate.cshtml",
+              "DocumentMoniker": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Candidate.cshtml",
+              "RelativeDocumentMoniker": "KoiShow.WebApp\\Pages\\Candidate.cshtml",
+              "ToolTip": "C:\\Users\\lvlon\\source\\repos\\KoiShow_Web\\KoiShow\\KoiShow.WebApp\\Pages\\Candidate.cshtml",
+              "RelativeToolTip": "KoiShow.WebApp\\Pages\\Candidate.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKoAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T07:24:11.833Z",
               "EditorCaption": ""
             }
           ]
